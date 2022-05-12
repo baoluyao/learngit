@@ -1,0 +1,6 @@
+    <IsTalk>true</IsTalk>
+    <AppID>5c0e2e29</AppID>
+    <IsTalkAutoSend>true</IsTalkAutoSend>
+    <ListenVoiceType>0</ListenVoiceType>
+    <ExtensionStartMsg>有效</ExtensionStartMsg>
+	config, _ = configuration.LoadConfig()
