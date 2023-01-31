@@ -1,0 +1,48 @@
+//go:build ignore
+// +build ignore
+
+package main
+
+import "fmt"
+
+type AbnormalType int
+
+const (
+	a     AbnormalType = iota //0  状态
+	b                         //1  异常
+	c                         //2   告警
+	d                         //3   告警
+	total                     // 4   总数
+)
+
+func (t AbnormalType) Name() (name string) {
+	switch t {
+	case a:
+		name = "状态"
+	case b:
+		name = "异常"
+	case c:
+		name = "告警"
+	case d:
+		name = "提醒"
+	}
+	return 
+}
+
+
+func GetMaps(t AbnormalType) map[int]string {
+	types := make(map[int]string, total) //第二种
+
+	for i := 0; i < int(total); i++ {
+		
+		types[i] = AbnormalType(i).Name()
+	}
+	return types
+}
+
+func main() {
+
+	var a AbnormalType
+	abnormalTypes2 := GetMaps(a)
+	fmt.Println(abnormalTypes2)
+}
