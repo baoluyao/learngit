@@ -3,7 +3,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 type AbnormalType int
 
@@ -26,23 +29,60 @@ func (t AbnormalType) Name() (name string) {
 	case d:
 		name = "提醒"
 	}
-	return 
+	return
 }
-
 
 func GetMaps(t AbnormalType) map[int]string {
 	types := make(map[int]string, total) //第二种
 
 	for i := 0; i < int(total); i++ {
-		
+
 		types[i] = AbnormalType(i).Name()
 	}
 	return types
 }
 
+type ModuleType int
+
+const (
+	completemachinestatus ModuleType = iota //0  整机状态
+	softwaresystem                          //1  软件系统
+	sensor                                  //2   传感器
+)
+
+func (m ModuleType) Name() (name string) {
+	switch m {
+	case completemachinestatus:
+		name = "状态"
+	case softwaresystem:
+		name = "软件系统"
+	case sensor:
+		name = "传感器"
+	}
+	return
+}
+
+func States(o interface{}) map[int]string {
+	bb := reflect.TypeOf(a)
+	cc := reflect.New(bb)
+	cc.Elem().SetInt(0)
+
+	fmt.Println(cc.Elem())
+
+	for {
+		name := cc.Elem().Name()
+		fmt.Println(name)
+		if name == "" {
+			break
+		}
+
+	}
+	return nil
+}
+
 func main() {
 
 	var a AbnormalType
-	abnormalTypes2 := GetMaps(a)
+	abnormalTypes2 := States(a)
 	fmt.Println(abnormalTypes2)
 }
