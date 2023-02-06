@@ -1,8 +1,0 @@
-2022-10-20 11:08:20 SendBatchSms:{
-   "PhoneNumberJson": "[\"18550529625\"]",
-   "SignNameJson": "[\"科沃斯商用机器人\"]",
-   "TemplateCode": "SMS_241355231",
-   "TemplateParamJson": "[{\"name\":\"gemangmang\",\"robotsn\":\"19980008\",\"time\":\"2022-10-20 11:08:12\"}]"
-}
-
-[{"name":"gemangmang","robotsn":"19980008","time":"2022-10-20 11:08:12"}]
